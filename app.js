@@ -2,7 +2,7 @@ const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
 
-const dev = process.env.NODE_ENV !== 'production'
+const dev = false
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -15,6 +15,6 @@ app.prepare().then(() => {
     handle(req, res, parsedUrl)
   }).listen(3000, (err) => {
     if (err) throw err
-    console.log('> Next Ready on http://localhost:3000')
+    console.log('> a1devs Ready on http://localhost:3000')
   })
 })
